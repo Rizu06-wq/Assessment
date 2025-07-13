@@ -1,6 +1,9 @@
 package pages;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,7 +11,11 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class LoginPage {
     private WebDriver driver;
@@ -19,8 +26,7 @@ public class LoginPage {
     @FindBy(id = "password")
     private WebElement txtPassword;
 
-    // ✅ The element to click to open the dropdown
-    @FindBy(id = "sessionLocation") // ✅ Make sure this is really the clickable element!
+    @FindBy(id = "sessionLocation")
     private WebElement locationTrigger;
 
     @FindBy(id = "loginButton")
@@ -37,17 +43,14 @@ public class LoginPage {
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-        // ✅ Click to open the dropdown
         locationTrigger.click();
 
-        // ✅ Dynamic <li> locator — do NOT use @FindBy!
         By outpatientOption = By.xpath("//li[normalize-space()='Outpatient Clinic']");
-
-        // ✅ Wait for <li> to appear & be clickable
         WebElement option = wait.until(ExpectedConditions.elementToBeClickable(outpatientOption));
         option.click();
 
-        // ✅ Click login
         wait.until(ExpectedConditions.elementToBeClickable(btnLogin)).click();
     }
+
+ 
 }

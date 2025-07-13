@@ -3,13 +3,6 @@
 <suite name="Failed suite [MySuite]">
   <test thread-count="5" name="MyTests(failed)">
     <classes>
-      <class name="testcases.LoginTest">
-        <methods>
-          <include name="setUp"/>
-          <include name="loginTest"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- testcases.LoginTest -->
       <class name="testcases.DeletePatientTest">
         <methods>
           <include name="testDeletePatientFlow" invocation-numbers="0"/>
@@ -17,15 +10,9 @@
       </class> <!-- testcases.DeletePatientTest -->
       <class name="testcases.VisitingPageTest">
         <methods>
-          <include name="tearDown"/>
           <include name="testVisitingPage"/>
         </methods>
       </class> <!-- testcases.VisitingPageTest -->
-      <class name="testcases.RegisterPatientTest">
-        <methods>
-          <include name="testRegisterPatient"/>
-        </methods>
-      </class> <!-- testcases.RegisterPatientTest -->
     </classes>
   </test> <!-- MyTests(failed) -->
 </suite> <!-- Failed suite [MySuite] -->
