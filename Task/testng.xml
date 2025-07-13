@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<suite name="MySuite">
+  <test name="MyTests">
+    <classes>
+      <class name="testcases.LoginTest"/>
+      <class name="testcases.RegisterPatientTest"/>
+      <class name="testcases.VisitingPageTest"/>
+      <class name ="testcases.DeletePatientTest"/>
+      
+    </classes>
+  </test>
+</suite>
